@@ -1,0 +1,36 @@
+
+# Problem downloading NLTK modules
+>>>nltk.download('punkt')
+[nltk_data] Error loading punkt: <urlopen error [SSL:
+[nltk_data]     CERTIFICATE_VERIFY_FAILED] certificate verify failed:
+[nltk_data]     unable to get local issuer certificate (_ssl.c:1006)>
+
+False
+
+# Open a terminal and run this:
+sh "/Applications/Python 3.11/Install Certificates.command"
+
+# output will be something like:
+ -- pip install --upgrade certifi
+Collecting certifi
+  Obtaining dependency information for certifi from https://files.pythonhosted.org/packages/5b/11/1e78951465b4a225519b8c3ad29769c49e0d8d157a070f681d5b6d64737f/certifi-2024.6.2-py3-none-any.whl.metadata
+  Using cached certifi-2024.6.2-py3-none-any.whl.metadata (2.2 kB)
+Using cached certifi-2024.6.2-py3-none-any.whl (164 kB)
+Installing collected packages: certifi
+Successfully installed certifi-2024.6.2
+
+[notice] A new release of pip is available: 23.2.1 -> 24.0
+[notice] To update, run: /Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11 -m pip install --upgrade pip
+ -- removing any existing file or link
+ -- creating symlink to certifi certificate bundle
+ -- setting permissions
+ -- update complete
+➜  ~
+
+# Now when you run:
+>>>nltk.download('punkt')
+[nltk_data] Downloading package punkt to /Users/shay/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+
+True
+
